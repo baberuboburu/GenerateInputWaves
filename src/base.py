@@ -14,11 +14,16 @@ class BaseInputWave(ABC):
     self.alpha = alpha
     self.in_sr = in_sr
     self.n_cycle = n_cycle
-    self.filename = os.path.splitext(os.path.basename(__file__))[0]
 
 
   @abstractmethod
   def generate_wave(self) -> np.ndarray:
+    pass
+
+
+  @property
+  @abstractmethod
+  def filename(self) -> str:
     pass
 
 
